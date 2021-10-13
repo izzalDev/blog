@@ -61,7 +61,7 @@ params:
 
         disqusjs:
             shortname: rizal-fd
-            apiUrl: https://disqus.com/api/3.0/
+            apiUrl: 
             apiKey:
             admin:
             adminLabel:
