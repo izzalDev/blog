@@ -1,16 +1,14 @@
-baseurl: https://rizal-fd.github.io/
+baseurl: https://example.com
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
-title: RFd's Blog
-
-ignoreErrors: ["error-remote-getjson"] 
+title: Example Site
 
 # Change it to your Disqus shortname before using
-disqusShortname: rizal-fd
+disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
-googleAnalytics: G-X7NK5C2NP1
+googleAnalytics:
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de, nl, it
@@ -60,8 +58,8 @@ params:
         provider: disqus
 
         disqusjs:
-            shortname: rizal-fd
-            apiUrl: 
+            shortname:
+            apiUrl:
             apiKey:
             admin:
             adminLabel:
