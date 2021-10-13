@@ -7,40 +7,55 @@
 
 <div class="disqus-container">
     <div id="disqus_thread"></div>
-        <script>
-            /**
-             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT 
-             *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR 
-             *  PLATFORM OR CMS.
-             *  
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
-             *  https://disqus.com/admin/universalcode/#configuration-variables
-             */
-            
-            var disqus_config = function () {
-                // Replace PAGE_URL with your page's canonical URL variable
-                this.page.url = {{ .Page.RelPermalink }};  
-                
-                // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                this.page.identifier = {{ .Page.Title}}; 
-            };
-            
-            
-            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-                var d = document, s = d.createElement('script');
-                
-                // IMPORTANT: Replace EXAMPLE with your forum shortname!
-                s.src = 'https://rizal-fd-github-io.disqus.com/embed.js';
-                
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>
-            Please enable JavaScript to view the 
-            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                comments powered by Disqus.
-            </a>
-        </noscript>
+    <script type="application/javascript">
+        let disqusjs;
+        function loadDisqusJS() {
+            disqusjs = new DisqusJS({
+                shortname: {{ $disqusjs.Shortname }},
+                siteName: {{ .Site.Title }},
+                apikey: {{ $disqusjs.ApiKey }},
+                {{ with $disqusjs.ApiUrl }}api: {{ . }},{{ end }}
+                {{ with $disqusjs.Admin }}admin: {{ . }},{{ end }}
+                {{ with $disqusjs.AdminLabel }}adminLabel: {{ . }}{{ end }}
+            });
+        }
+
+        function lazyLoadDisqusJS() {
+            if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+                document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+                return;
+            }
+
+            let d = document.createElement('script');
+            d.src = 'https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqus.js';
+            d.async = false;
+            document.body.appendChild(d);
+            d.onload = () => {
+                loadDisqusJS();
+                window.addEventListener('onColorSchemeChange', (e) => {
+                    if (disqusjs) {
+                        loadDisqusJS();
+                    }
+                })
+            }
+        }
+
+        let runningOnBrowser = typeof window !== "undefined";
+        let isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        let supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+
+        if (!isBot && supportsIntersectionObserver) {
+            let disqus_observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    lazyLoadDisqusJS();
+                    disqus_observer.disconnect();
+                }
+            });
+            disqus_observer.observe(document.getElementById('disqus_thread'));
+        } else {
+            lazyLoadDisqusJS();
+        }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 {{- end -}}
