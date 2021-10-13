@@ -47,6 +47,15 @@ params:
             local: true
             src: img/avatar.png
 
+    socialmenu:
+        enable: true
+        linkedin: "lkjasldkfjl" # your linkedin username
+        instagram: "klajdsf" # your instagram username
+        github: "rizal-fd" # your github name
+        twitter: "adflkj" # your twitter username
+        email: "rizal.fadlullah@gmail.com" # your email
+        facebook: "kadfjlkjsd" # your facebook username
+
     article:
         math: false
         toc: true

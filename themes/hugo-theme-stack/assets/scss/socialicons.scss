@@ -1,0 +1,38 @@
+.inline-svg {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    top: 0.15rem;
+    position: relative;
+    opacity: 0.6;
+}
+  
+.inline-svg:hover {
+    opacity: 0.4;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: center;
+    flex-direction: row
+}
+
+.social-icons>* {
+    flex: 0 0 18%;
+    padding-right: 5px;
+}
+
+@media (max-width:960px) {
+    .inline-svg {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        top: 0.15rem;
+    }
+
+    .social-icons>* {
+        flex: 0 0 5%;
+        padding-right: 10px;
+    }
+}
+  
