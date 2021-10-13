@@ -10,7 +10,7 @@ ignoreErrors: ["error-remote-getjson"]
 disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
-googleAnalytics:
+googleAnalytics: G-X7NK5C2NP1
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de, nl, it
