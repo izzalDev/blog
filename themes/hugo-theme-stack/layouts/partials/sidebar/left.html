@@ -57,6 +57,10 @@
                 {{ if (.Site.Params.socialmenu.twitter) }}
                     <div><a href="https://twitter.com/{{.Site.Params.socialmenu.twitter}}"><span class="inline-svg" >{{ partial "fontawesome.html" "twitter" }}</span></a></div>
                 {{ end }}
+
+                {{ if (.Site.Params.socialmenu.youtube) }}
+                    <div><a href="https://youtube.com/channel/{{.Site.Params.socialmenu.youtube}}"><span class="inline-svg" >{{ partial "fontawesome.html" "youtube" }}</span></a></div>
+                {{ end }}
             </div>
         {{ end }}    
 
@@ -68,7 +72,7 @@
         {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
 
         <li {{ if $active }} class='current' {{ end }}>
-            <a href='{{ .URL }}' {{ if eq .Params.newTab true }}target="_blank"{{ end }}>
+            <a href='{{ .URL }}' {{ if eq .Params.newTab false }}target="_blank"{{ end }}>
                 {{ if .Pre }}
                     {{ partial "helper/icon" .Pre }}
                 {{ end }}
