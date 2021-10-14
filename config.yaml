@@ -7,7 +7,7 @@ title: RFd's Blog
 ignoreErrors: ["error-remote-getjson"] 
 
 # Change it to your Disqus shortname before using
-disqusShortname: rizal-fd
+disqusShortname: rfds-blog
 
 # GA Tracking ID
 googleAnalytics: G-X7NK5C2NP1
@@ -70,7 +70,7 @@ params:
         provider: disqus
 
         disqusjs:
-            shortname: rizal-fd
+            shortname: rfds-blog
             apiUrl: 
             apiKey:
             admin:
