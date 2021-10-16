@@ -1,1 +1,17 @@
-/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+/*! CSS Used from: https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css */
+.fade{opacity:0;-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear;}
+.fade.in{opacity:1;}
+.nav{padding-left:0;margin-bottom:0;list-style:none;}
+.nav>li{position:relative;display:block;}
+.nav>li>a{position:relative;display:block;padding:0px 10px;}
+.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee;}
+.nav-tabs{border-bottom:1px solid #ddd;}
+.nav-tabs>li{float:left;margin-bottom:-1px;}
+.nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0;}
+.nav-tabs>li>a:hover{border-color:#eee #eee #ddd;}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#555;cursor:default;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent;}
+.tab-content>.tab-pane{display:none;}
+.tab-content>.active{display:block;}
+.tab-content .highlight .chroma{margin-top: 0;}
+.nav:after,.nav:before{display:table;content:" ";}
+.nav:after{clear:both;}
