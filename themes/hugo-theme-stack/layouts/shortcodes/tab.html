@@ -1,0 +1,6 @@
+{{ $tabName := .Get "tabName" }}
+{{ .Parent.Scratch.Add "tabName" (slice $tabName) }}
+
+<div class="tab-pane fade {{ if eq .Ordinal 0 }}in active {{ end }}" id="{{ lower (replaceRE "(\\s)" "" $tabName) }}" >
+	{{ $.Inner | markdownify }}
+</div>

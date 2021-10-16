@@ -1,0 +1,20 @@
+
+<ul class="nav nav-tabs">
+		{{ $tabTotal := .Get "tabTotal" }}
+		{{ $tabName := $.Scratch.Get "tabName" }}
+		{{ $tabID := delimit (shuffle (seq 1 5)) "" }}
+
+		{{ range $i, $sequence := (seq $tabTotal) }}
+
+		<li class="{{ if eq $i 0 }} active {{ end }}">
+		<a data-toggle="tab" href="#{{ lower (replaceRE "(\\s)" "" (index $tabName $i)) }}">{{ index $tabName $i }}</a>
+		</li>
+
+		{{ end }}
+</ul>
+
+<div class="tab-content" id="{{ $tabID }}">
+
+{{ .Inner }}
+
+</div>

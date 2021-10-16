@@ -131,7 +131,7 @@ console.log('Code Tab A');
 ### RLE Citra RGB
 
 
-<div class="container">
+
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
     <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
@@ -156,4 +156,22 @@ console.log('Code Tab A');
     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 </div>
 </div>
-</div>
+
+
+{{< tabs tabTotal="3">}} {{< tab tabName="Tab 1" >}}
+
+```javascript
+console.log('Code Tab A');
+```  
+
+{{< /tab >}} {{< tab tabName="Tab 2" >}}
+
+kjhakdjhfkjahkjhdkf
+
+lakjdfjalksdj
+
+{{< /tab >}} {{< tab tabName="Tab 3" >}}
+
+kjhakdjhfkajhsd
+
+{{< /tab >}} {{< /tabs >}}
